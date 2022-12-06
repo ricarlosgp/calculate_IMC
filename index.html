@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <!--meta-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+
+    <!--styles-->
+    <link rel="stylesheet" href="./style.css">
+    <link href="https: //fonts.googleapis.com/css2?family= Staatliches & display = swap" rel="stylesheet">
+    <!--preconnect-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!--scripts-->
+    <script src="./script.js" defer></script>
+    <!-- ao colocar ./script.js no head, precisamos inserir o defer caso esteja usando a DOM e sempre usamos DOM. Como o html ler linha a linha e ao chegar no defer ele vai aguardar toda a leitura do body para só após executar o script.js--> 
+</head>
+<body>
+
+    <div class="alert-error">
+        Digite somente números.
+    </div>
+
+    <div class="container"> <!--criado esse container para melhor estilizar no css.-->
+
+        <main class="card"> <!--todo o meu main é composto pelo quadrado em branco com textos dentro. Declarei um class chamado de card para melhor estilizar no css-->
+        <!--INICIANDO MEU FORMULÁRIO-->
+            <form>
+                <h1 class="title">Cálculo de IMC</h1> <!--estou utilizando no h1 um class pois irei reaproveitar para fazer o h2 e irei utilizar a mesma classe de configuração-->
+                <div class="input-wrapper"><!--essa dive é para ela poder receber tanto o label quanto o input dentro dela -->
+                    <label for="weight">Peso (Kg)</label> <!--o for têm que ser igual ao nome do input id para poder ficar linkado ao input. Ou seja, quando eu clicar no nome Peso ou no (Kg) automaticamente o cursor do mouse vai para dentro do input-->
+                    <input 
+                    id="weight"
+                    type="text"
+                    placeholder="60" />
+                    <!--O id é para identificar que o input é para o peso ou weight. O tipo é texto.Placeholder ou espaço reservado. É o texto do espaço reservado em um elemento. Nesse caso é o texto dentro do input-->                    
+                </div> 
+
+                <div class="input-wrapper">
+                    <label for="height">Altura (cm)</label>
+                    <input 
+                    id="height"
+                    type="text"
+                    placeholder="165" />
+                </div>
+
+                <button type="submit">
+                    Calcular IMC
+                    <img src="./assets/arrow.svg" alt="Seta apontando para direita">
+                </button>
+                <!--O tipo ou type do button é submit ou submeter, enviar... Esse img src está buscando a imagem da seta em ./assets/arrow.svg-->
+
+            </form>
+        </main>
+    </div>
+    
+    <div class="modal-wrapper">
+        <div class="modal card">
+            <h2 class="title">
+
+                <button class="close">
+                    <img src="./assets/close.svg" alt="imagem para fechar o popup">                
+                </button>
+                
+                <span>Seu IMC é de 28</span>
+                
+            </h2>
+        </div>
+    </div>
+
+
+</body>
+</html>
